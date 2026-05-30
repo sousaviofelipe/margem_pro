@@ -1,10 +1,12 @@
 // Implementação Supabase do repositório de receitas — consome apenas o client centralizado
 
 import { createClient } from "./client";
+
 import type {
   IReceitasRepository,
   Receita,
   ReceitaInput,
+  ReceitaIngrediente,
 } from "../interfaces/IReceitasRepository";
 
 export class ReceitasRepository implements IReceitasRepository {
@@ -96,7 +98,9 @@ export class ReceitasRepository implements IReceitasRepository {
     if (error) throw new Error(error.message);
   }
 
-  private calcularCustos(receita: Receita): Receita {
+  private calcularCustos(
+    receita: Receita & { receita_ingredientes?: ReceitaIngrediente[] },
+  ): Receita {
     const ingredientes = receita.receita_ingredientes ?? [];
     const custo_ingredientes = ingredientes.reduce(
       (acc, i) => acc + (i.custo ?? 0),
