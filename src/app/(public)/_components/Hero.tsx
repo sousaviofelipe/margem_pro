@@ -40,34 +40,36 @@ export default function Hero() {
           letter-spacing: 0.02em;
         }
 
-        .btn-wpp-green {
+.btn-wpp-green {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 16px;
+  padding: 7px 12px;
   border: none;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   color: #FFFFFF;
   text-decoration: none;
   transition: all 0.2s;
   background: #16a34a;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-wpp-green:hover { background: #15803d; }
 
 .btn-entrar {
-  padding: 9px 20px;
+  padding: 7px 12px;
   background: transparent;
   color: var(--grafite-mid);
   border: 1.5px solid var(--border);
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .btn-entrar:hover { border-color: var(--grafite-soft); color: var(--grafite); }
@@ -116,7 +118,7 @@ export default function Hero() {
         .header-actions {
           display: flex;
           align-items: center;
-          gap: 12px;
+          gap: 8px;
         }
 
         .btn-wpp {
@@ -137,20 +139,21 @@ export default function Hero() {
 
         .btn-wpp:hover { border-color: var(--terra); color: var(--terra); }
 
-        .btn-primary {
-          padding: 9px 20px;
-          background: var(--terra);
-          color: var(--white);
-          border: none;
-          border-radius: 8px;
-          font-size: 13px;
-          font-weight: 600;
-          text-decoration: none;
-          cursor: pointer;
-          transition: background 0.2s;
-        }
+.btn-primary {
+  padding: 7px 12px;
+  background: var(--terra);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
 
-        .btn-primary:hover { background: var(--terra-dark); }
+.btn-primary:hover { background: var(--terra-dark); }
 
         .hero {
           padding: 100px 5vw 80px;
@@ -359,11 +362,12 @@ export default function Hero() {
           color: var(--grafite);
         }
 
-        @media (max-width: 768px) {
-          .nav { display: none; }
-          .hero { grid-template-columns: 1fr; gap: 40px; padding: 60px 5vw; }
-          .hero-visual { display: none; }
-        }
+@media (max-width: 768px) {
+  .nav { display: none; }
+  .hero { grid-template-columns: 1fr; gap: 40px; padding: 60px 5vw; }
+  .hero-visual { display: none; }
+  .btn-wpp-green { display: none; }
+}
       `}</style>
 
       <div className="trial-bar">
