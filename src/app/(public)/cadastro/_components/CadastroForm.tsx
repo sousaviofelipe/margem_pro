@@ -55,7 +55,7 @@ export default function CadastroForm() {
     const resultado = cadastroSchema.safeParse({ ...form });
     if (!resultado.success) {
       const mapa: Partial<Record<keyof CadastroForm, string>> = {};
-      resultado.error.errors.forEach((err) => {
+      resultado.error.issues.forEach((err) => {
         const campo = err.path[0] as keyof CadastroForm;
         if (!mapa[campo]) mapa[campo] = err.message;
       });
